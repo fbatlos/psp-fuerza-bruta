@@ -33,7 +33,8 @@ public class Ladron
         {
             if (passwordHash == hash.getHash(palabra) )
             {
-                Console.WriteLine("Ladron: " + nombre + " ha solucionado la contraseña.");
+                Console.WriteLine("Ladron: " + nombre + " ha solucionado la contraseña."+"La password era : " + palabra);
+                break;
             }
             else
             {
