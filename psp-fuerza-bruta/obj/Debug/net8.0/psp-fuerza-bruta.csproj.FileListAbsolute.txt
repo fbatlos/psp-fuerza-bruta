@@ -1,0 +1,15 @@
+C:\Users\pacob\RiderProjects\psp-fuerza-bruta\psp-fuerza-bruta\bin\Debug\net8.0\psp-fuerza-bruta.exe
+C:\Users\pacob\RiderProjects\psp-fuerza-bruta\psp-fuerza-bruta\bin\Debug\net8.0\psp-fuerza-bruta.deps.json
+C:\Users\pacob\RiderProjects\psp-fuerza-bruta\psp-fuerza-bruta\bin\Debug\net8.0\psp-fuerza-bruta.runtimeconfig.json
+C:\Users\pacob\RiderProjects\psp-fuerza-bruta\psp-fuerza-bruta\bin\Debug\net8.0\psp-fuerza-bruta.dll
+C:\Users\pacob\RiderProjects\psp-fuerza-bruta\psp-fuerza-bruta\bin\Debug\net8.0\psp-fuerza-bruta.pdb
+C:\Users\pacob\RiderProjects\psp-fuerza-bruta\psp-fuerza-bruta\obj\Debug\net8.0\psp-fuerza-bruta.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pacob\RiderProjects\psp-fuerza-bruta\psp-fuerza-bruta\obj\Debug\net8.0\psp-fuerza-bruta.AssemblyInfoInputs.cache
+C:\Users\pacob\RiderProjects\psp-fuerza-bruta\psp-fuerza-bruta\obj\Debug\net8.0\psp-fuerza-bruta.AssemblyInfo.cs
+C:\Users\pacob\RiderProjects\psp-fuerza-bruta\psp-fuerza-bruta\obj\Debug\net8.0\psp-fuerza-bruta.csproj.CoreCompileInputs.cache
+C:\Users\pacob\RiderProjects\psp-fuerza-bruta\psp-fuerza-bruta\obj\Debug\net8.0\psp-fuerza-bruta.sourcelink.json
+C:\Users\pacob\RiderProjects\psp-fuerza-bruta\psp-fuerza-bruta\obj\Debug\net8.0\psp-fuerza-bruta.dll
+C:\Users\pacob\RiderProjects\psp-fuerza-bruta\psp-fuerza-bruta\obj\Debug\net8.0\refint\psp-fuerza-bruta.dll
+C:\Users\pacob\RiderProjects\psp-fuerza-bruta\psp-fuerza-bruta\obj\Debug\net8.0\psp-fuerza-bruta.pdb
+C:\Users\pacob\RiderProjects\psp-fuerza-bruta\psp-fuerza-bruta\obj\Debug\net8.0\psp-fuerza-bruta.genruntimeconfig.cache
+C:\Users\pacob\RiderProjects\psp-fuerza-bruta\psp-fuerza-bruta\obj\Debug\net8.0\ref\psp-fuerza-bruta.dll
