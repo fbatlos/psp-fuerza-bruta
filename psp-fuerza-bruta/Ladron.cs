@@ -11,6 +11,7 @@ public class Ladron
     private List<String> palabras;
     Wrapper<Action> finishEvent;
     HashPassword hash = new HashPassword();
+    bool finished = false;
     
     public Ladron(String nombre, string passwordHash, Wrapper<Action> finishEvent, List<String> palabras)
     {
@@ -18,6 +19,7 @@ public class Ladron
         this.nombre = nombre;
         //Con global crea una copia !
         this.finishEvent = finishEvent;
+        finishEvent.Value += () => { finished = true;};
         this.palabras = palabras;
         hilo = new Thread(_process);
     }
@@ -31,14 +33,16 @@ public class Ladron
     {
         foreach (var palabra in palabras)
         {
-            if (passwordHash == hash.getHash(palabra) )
+            if (finished)
             {
-                Console.WriteLine("Ladron: " + nombre + " ha solucionado la contraseña."+"La password era : " + palabra);
-                break;
+             break;       
             }
-            else
+            
+            if (passwordHash == hash.getHash(palabra))
             {
-                Console.WriteLine("Error: Password.");
+                finishEvent.Value.Invoke();
+                Console.WriteLine("Ladron: " + nombre + " ha solucionado la contraseña: "+passwordHash+". "+"La password era: " + hash.getHash(palabra));
+                break;
             }
         }
     }
