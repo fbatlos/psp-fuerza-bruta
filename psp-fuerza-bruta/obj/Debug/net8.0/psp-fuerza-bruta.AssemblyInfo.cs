@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("psp-fuerza-bruta")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eca455ebc9d5c05c30185fe1b1b0b75d16c0b441")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd74e9b63bc6fb0222c557725f6ebf6298e52d50")]
 [assembly: System.Reflection.AssemblyProductAttribute("psp-fuerza-bruta")]
 [assembly: System.Reflection.AssemblyTitleAttribute("psp-fuerza-bruta")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

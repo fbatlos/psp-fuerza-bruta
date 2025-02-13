@@ -1,51 +1,44 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-
-//SHA-N , buscar libreria
-
-using psp_fuerza_bruta;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading;
 using HilosParaTodos;
+using psp_fuerza_bruta;
 
-List<List<String>> Mitad(List<String> listPassword,int hilos)
+class Program
 {
-    var paswordsForTh = listPassword.Count/hilos;
-    
-    var partsPasword = new List<List<String>>();
-
-    for (int i = 0; i < hilos; i++)
+    static void Main()
     {
-        partsPasword.Add(new List<String>());
+        Fichero fichero = new Fichero();
+        var hashPassword = new HashPassword();
+        var listPassword = fichero.GetText().Where(p => !string.IsNullOrEmpty(p)).ToList();
+        Random random = new Random();
+        int randomNumber = random.Next(listPassword.Count);
+        var password = hashPassword.getHash(listPassword.ElementAt(randomNumber));
+
+        int numHilos = 24;
+        bool encontrada = false;
+        Wrapper<Action> wrapper = new Wrapper<Action>(() => {encontrada = true;});
         
-        for (int j = 0; i < paswordsForTh; i++)
+        List<Ladron> ladrones = new List<Ladron>();
+        
+        
+        for (int i = 0; i < numHilos; i++)
         {
-            partsPasword[i].Add(listPassword.ElementAt(j));
+            var partesPasswords = listPassword.GetRange(randomNumber, numHilos);
+            ladrones.Add(new Ladron($"Ladron_{i + 1}", password, wrapper, partesPasswords));
         }
+        Stopwatch stopwatch = Stopwatch.StartNew();
+        foreach (var ladron in ladrones)
+        {
+            ladron.Start();
+        }
+        
+        while (!encontrada) { } 
+
+        stopwatch.Stop();
+        Console.WriteLine($"Tiempo total: {stopwatch.ElapsedMilliseconds} ms");
     }
     
-    return partsPasword;
-} 
-
-Fichero fichero = new Fichero();
-Wrapper<Action> wrapper = new Wrapper<Action>((() => {}));
-
-var hashPassword = new HashPassword();
-
-var listPassword = fichero.GetText();
-
-Random random = new Random();
-
-var paswords = Mitad(listPassword:listPassword,hilos: 2);
-
-int randomNumber = random.Next(listPassword.Count);
-
-var password = hashPassword.getHash(listPassword.ElementAt(randomNumber));
-
-Ladron ladron1 = new Ladron("Fran", password, wrapper, paswords[0]);
-
-Ladron ladron2 = new Ladron("Pepe", password, wrapper, paswords[1]);
-
-ladron1.Start();
-ladron2.Start();
-
-
+}
