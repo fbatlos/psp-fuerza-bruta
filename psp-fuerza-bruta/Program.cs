@@ -16,8 +16,19 @@ class Program
         Random random = new Random();
         int randomNumber = random.Next(listPassword.Count);
         var password = hashPassword.getHash(listPassword.ElementAt(randomNumber));
+        int numHilos = 1;
+        try
+        {
+            Console.Write("Cuantos hilos quieres: ");
+            numHilos = int.Parse(Console.ReadLine());
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Ha introducido un número o carácter no válido, se realizará la prueba con 1 hilo.");
+            throw;
+        }
         
-        int numHilos = 2;
+        
         bool encontrada = false;
         Wrapper<Action> wrapper = new Wrapper<Action>(() => {encontrada = true;});
         
