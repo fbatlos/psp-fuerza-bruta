@@ -10,7 +10,16 @@ public class Fichero
         String line;
         try
         {
-            StreamReader sr = new StreamReader("C:\\Users\\pacob\\RiderProjects\\psp-fuerza-bruta\\psp-fuerza-bruta\\2151220-passwords.txt");
+            
+            string relativePath = "2151220-passwords.txt"; 
+            string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
+
+            if (!File.Exists(fullPath))
+            {
+                Console.WriteLine($"Error: No se encontró el archivo en {fullPath}");
+            }
+
+            StreamReader sr = new StreamReader(fullPath);
         
             line = sr.ReadLine();
             

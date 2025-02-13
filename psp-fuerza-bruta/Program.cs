@@ -16,8 +16,8 @@ class Program
         Random random = new Random();
         int randomNumber = random.Next(listPassword.Count);
         var password = hashPassword.getHash(listPassword.ElementAt(randomNumber));
-
-        int numHilos = 24;
+        
+        int numHilos = 2;
         bool encontrada = false;
         Wrapper<Action> wrapper = new Wrapper<Action>(() => {encontrada = true;});
         
